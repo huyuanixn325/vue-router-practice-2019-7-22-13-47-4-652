@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Welcome from '../components/Welcome.vue'
 import index from '../components/index.vue'
 import Main from '../components/mainTodoList.vue'
+import Mine from '../components/mine.vue'
+
 vue.use(Router)
 
 export default new Router({
@@ -14,7 +16,23 @@ export default new Router({
         {
             path:"/index/:username",
             component:index,
-            props:true
+            props:true,
+            children:[
+                {
+                    path:"Main",
+                    name:"Main",
+                    component:Main
+                },
+                {
+                    path:"Mine",
+                    name:"Mine",
+                    component:Mine
+                },
+                {
+                    path:"/",
+                    redirect:'Main'
+                }
+            ]
         }
     ]
 })

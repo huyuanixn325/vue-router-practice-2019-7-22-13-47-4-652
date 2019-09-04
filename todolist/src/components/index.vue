@@ -1,18 +1,18 @@
 <template>
     <div>
         <button @click="back">返回</button><span>当前用户:{{username}}</span>
-       <Main></Main>
+        <router-link :to="{name:'Main'}">todoList</router-link>
+        <br>
+         <router-link :to="{name:'Mine'}">我的</router-link>
+      <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import Main from './mainTodoList.vue'
+   
     export default {
         name: 'index',
         props:{username:String},
-        components: {
-            Main
-        },
         methods:{
             back:function(){
                 if(confirm("确认返回?")){
