@@ -2,7 +2,7 @@
     <div>
         <h1>欢迎使用TODOList</h1>
           <br>
-        <input type="text" v-model="inputtingText">
+        <input type="text" v-model="inputtingText"  placeholder="请输入姓名">
         <button @click="handleInput">开始使用</button>
     </div>
 </template>

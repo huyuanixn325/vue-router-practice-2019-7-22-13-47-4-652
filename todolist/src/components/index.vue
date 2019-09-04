@@ -1,29 +1,38 @@
 <template>
     <div>
-        <h2>
-          Vue To Do List
-          Simple Todo List with adding and filter by diff status.
-        </h2>
-         <CreateForm/>
-        <TodoList/>
-        <TodoListFilter/>
+        <button @click="back">返回</button><span>当前用户:{{username}}</span>
+       <Main></Main>
     </div>
 </template>
 
 <script>
-    import CreateForm from './CreateForm.vue'
-    import TodoList from './TodoList.vue'
-    import TodoListFilter from './TodoListFilter.vue'
-
+    import Main from './mainTodoList.vue'
     export default {
         name: 'index',
-        props:['username'],
+        props:{username:String},
         components: {
-            CreateForm,
-            TodoList,
-            TodoListFilter,
-        },created:function(){
-            this.$store.dispatch("fetchTodos"); 
+            Main
+        },
+        methods:{
+            back:function(){
+                if(confirm("确认返回?")){
+                    this.$router.push("/");
+                }else{
+
+                }
+            }
         }
     }
 </script>
+<style scoped>
+    button{
+      height: 20px;
+       float:"left";  
+    }
+    span{
+        display: block;
+        margin-top: 0px;
+        float:"right";
+    }
+   
+</style>

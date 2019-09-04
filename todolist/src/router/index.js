@@ -2,6 +2,7 @@ import vue from 'vue'
 import Router from 'vue-router'
 import Welcome from '../components/Welcome.vue'
 import index from '../components/index.vue'
+import Main from '../components/mainTodoList.vue'
 vue.use(Router)
 
 export default new Router({
@@ -11,7 +12,7 @@ export default new Router({
             component:Welcome
         },
         {
-            path:"/index:username",
+            path:"/index/:username",
             component:index,
             props:true
         }
