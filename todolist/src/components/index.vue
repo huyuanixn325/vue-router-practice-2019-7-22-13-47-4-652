@@ -1,10 +1,17 @@
 <template>
     <div>
-        <button @click="back">返回</button><span>当前用户:{{username}}</span>
+        
+        <div><button @click="back">返回</button><span>当前用户:{{username}}</span></div>
+        <div>
+        <div class="left">
         <router-link :to="{name:'Main'}">todoList</router-link>
         <br>
-         <router-link :to="{name:'Mine'}">我的</router-link>
+         <router-link :to="'/index/'+username+'/Mine/'+username">我的</router-link>
+        </div>
+        <div class="right">
       <router-view></router-view>
+        </div>
+        </div>
     </div>
 </template>
 
@@ -27,12 +34,22 @@
 <style scoped>
     button{
       height: 20px;
-       float:"left";  
+       position:abslote;
+       top:0px;
+       left:0px;
     }
     span{
-        display: block;
+        float: right;
         margin-top: 0px;
-        float:"right";
     }
-   
+   .left{
+       text-align-last: center;
+       width:200px;
+       display:inline-block;
+   }
+   .right{
+       height: 800px;
+       display:inline-block;
+       text-align: center;
+   }
 </style>

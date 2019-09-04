@@ -12,14 +12,20 @@ export default {
     name:'mine',
     data:function(){
         return {
-            username:'gaoyang',
             telephone:'18339920955'
         }
+    },
+    props:{
+        username:String
     }
 }
 </script>
 
 <style scoped>
+#mine{
+    text-align: center;
+    margin-top: 30px;
+}
 img{
     height: 40px;
     width: 40px;

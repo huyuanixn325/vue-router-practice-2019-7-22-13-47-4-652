@@ -24,9 +24,9 @@ export default new Router({
                     component:Main
                 },
                 {
-                    path:"Mine",
-                    name:"Mine",
-                    component:Mine
+                    path:"/index/:username/Mine/:username",
+                    component:Mine,
+                    props:true
                 },
                 {
                     path:"/",
